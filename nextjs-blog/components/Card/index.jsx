@@ -8,10 +8,11 @@ export default function Card({
   price = "",
   url = "",
   category = false,
+  photo = false,
 }) {
   return (
     <>
-      {category && (
+      {category && photo && (
         <div className={styles.container}>
           <div className={styles.photoContainer}>
             <Image
@@ -25,7 +26,13 @@ export default function Card({
           <p className={styles.label}>{name}</p>
         </div>
       )}
-      {!category && (
+      {category && !photo && (
+        <div className={styles.container}>
+          <div className={styles.photoContainer}></div>
+          <p className={styles.label}>{name}</p>
+        </div>
+      )}
+      {!category && photo && (
         <div className={styles.container}>
           <div className={styles.photoContainer}>
             <Image
@@ -36,6 +43,24 @@ export default function Card({
               height={10}
             />
           </div>
+          <div className={styles.info}>
+            <p className={styles.name}>{name}</p>
+            <span className={styles.text}>
+              <p className={styles.bold}>{cal}</p>
+              <p className={styles.cal}>calories</p>
+            </span>
+            <span className={styles.wrap}>
+              <h4 className={styles.price}>${price}</h4>
+              <span className={styles.button}>
+                <Button color="orange" text="Add" />
+              </span>
+            </span>
+          </div>
+        </div>
+      )}
+      {!category && !photo && (
+        <div className={styles.container}>
+          <div className={styles.photoContainer}></div>
           <div className={styles.info}>
             <p className={styles.name}>{name}</p>
             <span className={styles.text}>

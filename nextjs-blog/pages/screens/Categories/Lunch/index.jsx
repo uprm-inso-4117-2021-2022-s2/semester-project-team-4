@@ -21,11 +21,12 @@ export default function Lunch() {
           <div className={styles.cards}>
             <Link href="/screens/Categories/Breakfast">
               <Card
-                name="Bacon Rancher"
+                name="Bacon Queen"
                 cal="1,300"
-                price="$7.50"
+                price="7.50"
                 url={burger}
                 category={false}
+                photo={true}
               />
             </Link>
             <Link href="/screens/Categories/Lunch">
@@ -35,6 +36,7 @@ export default function Lunch() {
                 price="9.79"
                 url={pizza}
                 category={false}
+                photo={true}
               />
             </Link>
             <Link href="/screens/Categories/Appetizers">
@@ -44,15 +46,17 @@ export default function Lunch() {
                 price="8.99"
                 url={pasta}
                 category={false}
+                photo={true}
               />
             </Link>
             <Link href="/screens/Categories/Soup">
               <Card
-                name="Beef Bacon Ranch Quesadillas"
+                name="Bacon Quesadillas"
                 cal="6.99"
                 price="9.79"
                 url={quesadilla}
                 category={false}
+                photo={true}
               />
             </Link>
             <Link href="/screens/Categories/Desserts">
@@ -62,6 +66,7 @@ export default function Lunch() {
                 price="12.79"
                 url={ribs}
                 category={false}
+                photo={true}
               />
             </Link>
             <Link href="/screens/Categories/Beverages">
@@ -71,6 +76,7 @@ export default function Lunch() {
                 price="8.50"
                 url={fajitas}
                 category={false}
+                photo={true}
               />
             </Link>
           </div>
@@ -83,7 +89,7 @@ export default function Lunch() {
 const pizza =
   "https://www.recipetineats.com/wp-content/uploads/2020/05/Pepperoni-Pizza_5-SQjpg.jpg";
 const burger =
-  "https://sweetsavoryandsteph.com/wp-content/uploads/2020/09/IMG_2461-scaled.jpg";
+  "https://thepizzajointsd.com/wp-content/uploads/2020/02/bacon-cheeseburger.jpg";
 const pasta =
   "https://simply-delicious-food.com/wp-content/uploads/2020/07/Cajun-chicken-pasta-2.jpg";
 const ribs =

@@ -18,6 +18,7 @@ const nextConfig = {
       "simply-delicious-food.com",
       "fridays.hu",
       "assets.bonappetit.com",
+      "thepizzajointsd.com",
     ],
   },
 };

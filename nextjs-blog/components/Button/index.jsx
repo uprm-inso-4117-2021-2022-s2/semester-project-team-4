@@ -21,13 +21,13 @@ export default function Button({ color = "", text = "", href = "" }) {
       <button
         style={{
           backgroundColor: colorSelected,
-          paddingLeft: 20,
-          paddingRight: 20,
-          paddingTop: 10,
-          paddingBottom: 10,
+          paddingLeft: 15,
+          paddingRight: 15,
+          paddingTop: 5,
+          paddingBottom: 5,
           fontFamily: "sans-serif",
           width: "fit-content",
-          borderRadius: 5,
+          borderRadius: 8,
           fontSize: 12,
           borderStyle: "none",
         }}

@@ -20,22 +20,47 @@ export default function Menu() {
           </p>
           <div className={styles.cards}>
             <Link href="/screens/Categories/Breakfast">
-              <Card name="Breakfast" url={breakfast} category={true} />
+              <Card
+                name="Breakfast"
+                url={breakfast}
+                category={true}
+                photo={true}
+              />
             </Link>
             <Link href="/screens/Categories/Lunch">
-              <Card name="Lunch" url={lunch} category={true} />
+              <Card name="Lunch" url={lunch} category={true} photo={true} />
             </Link>
             <Link href="/screens/Categories/Appetizers">
-              <Card name="Appetizers" url={appetizer} category={true} />
+              <Card
+                name="Appetizers"
+                url={appetizer}
+                category={true}
+                photo={true}
+              />
             </Link>
             <Link href="/screens/Categories/Soup">
-              <Card name="Soup Salads" url={salad} category={true} />
+              <Card
+                name="Soup Salads"
+                url={salad}
+                category={true}
+                photo={true}
+              />
             </Link>
             <Link href="/screens/Categories/Desserts">
-              <Card name="Desserts" url={dessert} category={true} />
+              <Card
+                name="Desserts"
+                url={dessert}
+                category={true}
+                photo={true}
+              />
             </Link>
             <Link href="/screens/Categories/Beverages">
-              <Card name="Beverages" url={drinks} category={true} />
+              <Card
+                name="Beverages"
+                url={drinks}
+                category={true}
+                photo={true}
+              />
             </Link>
           </div>
         </div>
