@@ -5,7 +5,7 @@ export default function AboutUs() {
   return (
     <body className={styles.background}>
       <div className={styles.container}>
-        <Header />
+        <Header onFocus="aboutus" />
         <h1>About Us Page</h1>
       </div>
     </body>

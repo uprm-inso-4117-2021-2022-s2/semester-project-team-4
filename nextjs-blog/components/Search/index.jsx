@@ -6,7 +6,9 @@ export default function Search() {
   return (
     <div className={styles.container}>
       <input autoFocus placeholder="Search" className={styles.search} />
-      <Image src={search} width={22} height={22} className={styles.icon} />
+      <button className={styles.icon}>
+        <Image src={search} width={22} height={22} />
+      </button>
     </div>
   );
 }

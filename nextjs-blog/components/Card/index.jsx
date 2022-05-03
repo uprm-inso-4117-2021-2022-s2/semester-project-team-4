@@ -1,4 +1,3 @@
-import Button from "../Button";
 import styles from "../../styles/card.module.sass";
 import Image from "next/image";
 
@@ -7,13 +6,13 @@ export default function Card({
   cal = "",
   price = "",
   url = "",
-  category = false,
   photo = false,
+  isAdded = false,
 }) {
   return (
     <>
-      {category && photo && (
-        <div className={styles.container}>
+      <div className={styles.container}>
+        {photo && (
           <div className={styles.photoContainer}>
             <Image
               className={styles.photo}
@@ -23,59 +22,32 @@ export default function Card({
               height={10}
             />
           </div>
-          <p className={styles.label}>{name}</p>
-        </div>
-      )}
-      {category && !photo && (
-        <div className={styles.container}>
-          <div className={styles.photoContainer}></div>
-          <p className={styles.label}>{name}</p>
-        </div>
-      )}
-      {!category && photo && (
-        <div className={styles.container}>
-          <div className={styles.photoContainer}>
-            <Image
-              className={styles.photo}
-              src={url}
-              layout="responsive"
-              width={10}
-              height={10}
-            />
-          </div>
-          <div className={styles.info}>
-            <p className={styles.name}>{name}</p>
-            <span className={styles.text}>
-              <p className={styles.bold}>{cal}</p>
-              <p className={styles.cal}>calories</p>
-            </span>
-            <span className={styles.wrap}>
-              <h4 className={styles.price}>${price}</h4>
-              <span className={styles.button}>
-                <Button color="orange" text="Add" />
+        )}
+        <div className={styles.info}>
+          <p className={styles.name}>{name}</p>
+          <span className={styles.text}>
+            <p className={styles.bold}>{cal}</p>
+            <p className={styles.cal}>calories</p>
+          </span>
+          <span className={styles.wrap}>
+            <h4 className={styles.price}>${price}</h4>
+            {isAdded ? (
+              <span className={styles.buttonWrap}>
+                <button className={styles.button}>
+                  <p className={styles.p}>+</p>
+                </button>
+                <button className={styles.button}>
+                  <p className={styles.p}>-</p>
+                </button>
               </span>
-            </span>
-          </div>
+            ) : (
+              <button className={styles.button} onClick={""}>
+                <p className={isAdded && styles.p}>Add</p>
+              </button>
+            )}
+          </span>
         </div>
-      )}
-      {!category && !photo && (
-        <div className={styles.container}>
-          <div className={styles.photoContainer}></div>
-          <div className={styles.info}>
-            <p className={styles.name}>{name}</p>
-            <span className={styles.text}>
-              <p className={styles.bold}>{cal}</p>
-              <p className={styles.cal}>calories</p>
-            </span>
-            <span className={styles.wrap}>
-              <h4 className={styles.price}>${price}</h4>
-              <span className={styles.button}>
-                <Button color="orange" text="Add" />
-              </span>
-            </span>
-          </div>
-        </div>
-      )}
+      </div>
     </>
   );
 }

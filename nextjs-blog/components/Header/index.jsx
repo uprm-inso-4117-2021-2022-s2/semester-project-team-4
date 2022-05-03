@@ -6,23 +6,26 @@ import Search from "../Search";
 import logo from "../../public/logo.jpg";
 import bag from "../../public/bag.png";
 
-export default function Header() {
+export default function Header({ onFocus }) {
   return (
     <div className={styles.header}>
       <Image src={logo} />
-      <ScreensBar />
+      <ScreensBar onFocus={onFocus} />
       <span className={styles.right}>
         <Search />
-        <Link href="/screens/ShoppingBag">
-          <Image
-            src={bag}
-            width={20}
-            height={15}
-            objectFit="contain"
-            className={styles.icon}
-            placeholder="Shopping Bag"
-          />
-        </Link>
+        <button
+          className={onFocus === "bag" ? styles.active : styles.logoContainer}
+        >
+          <Link href="/screens/ShoppingBag">
+            <Image
+              src={bag}
+              width="30"
+              height="25"
+              objectFit="contain"
+              placeholder="Shopping Bag"
+            />
+          </Link>
+        </button>
       </span>
     </div>
   );

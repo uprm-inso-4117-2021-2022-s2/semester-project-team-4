@@ -5,7 +5,7 @@ export default function Recipes() {
   return (
     <body className={styles.background}>
       <div className={styles.container}>
-        <Header />
+        <Header onFocus="recipes" />
         <h1>Recipes Page</h1>
       </div>
     </body>

@@ -1,22 +1,13 @@
-import styles from "../styles/home.module.sass";
-import Board from "../components/Board";
-import Categories from "../components/Categories";
-import HowToOrder from "../components/HowToOrder";
-import AboutUs from "../components/AboutUs";
+import styles from "../styles/app.module.sass";
 import Header from "../components/Header";
+import Home from "./screens/Home";
 
-export default function Home(props) {
+export default function App() {
   return (
     <body className={styles.background}>
       <div className={styles.container}>
-        <Header />
-        <Board />
-        <div className={styles.categories}>
-          <h3 className={styles.seccionName}>Categories</h3>
-          <Categories />
-        </div>
-        <HowToOrder />
-        <AboutUs />
+        <Header onFocus="home" />
+        <Home />
       </div>
     </body>
   );

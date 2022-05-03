@@ -1,64 +1,29 @@
 import styles from "../../styles/categories.module.sass";
-import bread from "../../public/bread.png";
 import Image from "next/image";
+import Link from "next/link";
+import { categoriesID, categoriesNames } from "../../util/constants";
+import bread from "../../public/bread.png";
 import fries from "../../public/Fries.png";
 import icecream from "../../public/Ice cream.png";
 import soup from "../../public/soup.png";
 import coffee from "../../public/coffee.png";
 import pizza from "../../public/Pizza.png";
-import Link from "next/link";
+
+export const categoriesImage = [bread, fries, icecream, soup, coffee, pizza];
 
 export default function Categories() {
   return (
     <div className={styles.container}>
-      <Link href="/screens/Categories/Breakfast">
-        <div className={styles.card}>
-          <span className={styles.circle}>
-            <Image src={bread} />
-          </span>
-          <p className={styles.label}>Breakfast</p>
-        </div>
-      </Link>
-      <Link href="/screens/Categories/Appetizers">
-        <div className={styles.card}>
-          <span className={styles.circle}>
-            <Image src={fries} />
-          </span>
-          <p className={styles.label}>Appetizers</p>
-        </div>
-      </Link>
-      <Link href="/screens/Categories/Lunch">
-        <div className={styles.card}>
-          <span className={styles.circle}>
-            <Image src={pizza} />
-          </span>
-          <p className={styles.label}>Lunch</p>
-        </div>
-      </Link>
-      <Link href="/screens/Categories/Dessert">
-        <div className={styles.card}>
-          <span className={styles.circle}>
-            <Image src={icecream} />
-          </span>
-          <p className={styles.label}>Desserts</p>
-        </div>
-      </Link>
-      <Link href="/screens/Categories/Soup">
-        <div className={styles.card}>
-          <span className={styles.circle}>
-            <Image src={soup} />
-          </span>
-          <p className={styles.label}>Soups & Salads</p>
-        </div>
-      </Link>
-      <Link href="/screens/Categories/Beverage">
-        <div className={styles.card}>
-          <span className={styles.circle}>
-            <Image src={coffee} />
-          </span>
-          <p className={styles.label}>Beverages</p>
-        </div>
-      </Link>
+      {categoriesID.map((k, i) => (
+        <Link href={"/screens/Menu/" + categoriesID[i]}>
+          <div className={styles.card}>
+            <span className={styles.circle}>
+              <Image src={categoriesImage[i]} />
+            </span>
+            <p className={styles.label}>{categoriesNames[i]}</p>
+          </div>
+        </Link>
+      ))}
     </div>
   );
 }
