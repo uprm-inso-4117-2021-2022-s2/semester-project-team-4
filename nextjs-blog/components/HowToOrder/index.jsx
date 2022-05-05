@@ -34,7 +34,7 @@ export default function HowToOrder() {
           </span>
           <h4 className={styles.h5}>Checkout Order</h4>
           <p className={styles.p1}>
-            Orders that are in your shopping bag now just do checkout, to be
+            Orders that are in your shopping cart now just do checkout, to be
             ready for processing.
           </p>
         </span>

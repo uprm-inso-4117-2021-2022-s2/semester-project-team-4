@@ -1,5 +1,5 @@
 import styles from "../../styles/foodSection.module.sass";
-import Card from "../Card";
+import Card from "../MenuCard";
 import Image from "next/image";
 import arrow from "../../public/arrow.png";
 
@@ -14,12 +14,14 @@ export default function FoodSection({ array, title, id }) {
         <span className={styles.section} id={id + "scroll"}>
           {array.map((k) => (
             <Card
+              id={k.id}
               name={k.name}
               url={k.url}
               cal={k.cal}
               price={k.price}
               photo={true}
-              isAdded={false}
+              isAdded={k.isAdded}
+              array={array}
             />
           ))}
         </span>
@@ -39,20 +41,5 @@ export default function FoodSection({ array, title, id }) {
         </span>
       </div>
     </div>
-  );
-}
-
-function Cards({ name, url, cal, price, photo = true, isAdded = false }) {
-  return (
-    <>
-      <Card
-        name={name}
-        url={url}
-        cal={cal}
-        price={price}
-        photo={photo}
-        isAdded={isAdded}
-      />
-    </>
   );
 }

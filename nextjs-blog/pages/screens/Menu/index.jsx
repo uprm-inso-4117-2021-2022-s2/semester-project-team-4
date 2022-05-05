@@ -7,12 +7,12 @@ import appet from "../../../public/appetizers.png";
 import salad from "../../../public/soups.png";
 import FoodSection from "../../../components/FoodSection";
 import {
-  appetizerNames,
-  breakfastNames,
-  dessertNames,
-  drinkNames,
-  lunchNames,
-  saladNames,
+  appetizerInfo,
+  breakfastInfo,
+  dessertInfo,
+  drinkInfo,
+  lunchInfo,
+  saladInfo,
 } from "../../../util/constants";
 
 export default function Menu() {
@@ -31,39 +31,39 @@ export default function Menu() {
             can try some of our natural juices. don't forget to hydrate.
           </p>
           <Categories />
-          {breakfastNames == 0 ? (
+          {breakfastInfo == 0 ? (
             <></>
           ) : (
             <FoodSection
-              array={breakfastNames}
+              array={breakfastInfo}
               title={breakfast}
               id="breakfast"
             />
           )}
-          {lunchNames == 0 ? (
+          {lunchInfo == 0 ? (
             <></>
           ) : (
-            <FoodSection array={lunchNames} title={lunch} id="lunch" />
+            <FoodSection array={lunchInfo} title={lunch} id="lunch" />
           )}
-          {appetizerNames == 0 ? (
+          {appetizerInfo == 0 ? (
             <></>
           ) : (
-            <FoodSection array={appetizerNames} title={appet} id="appetizer" />
+            <FoodSection array={appetizerInfo} title={appet} id="appetizer" />
           )}
-          {saladNames == 0 ? (
+          {saladInfo == 0 ? (
             <></>
           ) : (
-            <FoodSection array={saladNames} title={salad} id="salad" />
+            <FoodSection array={saladInfo} title={salad} id="salad" />
           )}
-          {dessertNames == 0 ? (
+          {dessertInfo == 0 ? (
             <></>
           ) : (
-            <FoodSection array={dessertNames} title={salad} id="dessert" />
+            <FoodSection array={dessertInfo} title={salad} id="dessert" />
           )}
-          {drinkNames == 0 ? (
+          {drinkInfo == 0 ? (
             <></>
           ) : (
-            <FoodSection array={drinkNames} title={salad} id="drink" />
+            <FoodSection array={drinkInfo} title={salad} id="drink" />
           )}
         </div>
       </div>
