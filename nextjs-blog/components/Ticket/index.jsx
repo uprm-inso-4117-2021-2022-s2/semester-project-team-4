@@ -11,7 +11,11 @@ export default function Ticket() {
           items.map((i) => (
             <span className={styles.row}>
               <p className={styles.name}>{i.name}</p>
-              {i.quantity > 1 && <p className={styles.price}>{i.quantity}x</p>}
+              {i.quantity > 1 && (
+                <p className={styles.price} id="amount">
+                  {i.quantity}x
+                </p>
+              )}
               <p className={styles.price}>${i.price}</p>
             </span>
           ))}

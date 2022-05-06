@@ -3,11 +3,9 @@ import styles from "../../../styles/shoppingbag.module.sass";
 import { items } from "../../../util/constants";
 import Card from "../../../components/ShoppingCard";
 import Ticket from "../../../components/Ticket";
+import { useState, setState } from "react";
 
 export default function ShoppingCart() {
-  const refresh = () => {
-    this.setState({});
-  };
   return (
     <body className={styles.background}>
       <div className={styles.container}>
@@ -25,7 +23,6 @@ export default function ShoppingCart() {
                     cal={i.cal}
                     price={i.price}
                     photo={i.url !== ""}
-                    inBag={true}
                     quantity={i.quantity}
                   />
                 ))

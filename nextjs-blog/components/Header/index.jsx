@@ -15,7 +15,9 @@ export default function Header({ onFocus }) {
       <span className={styles.right}>
         <Search />
         <span>
-          <span className={styles.number}>{quantity()}</span>
+          <span className={styles.number} id="cartAmount">
+            {quantity()}
+          </span>
           <span
             className={onFocus === "bag" ? styles.active : styles.logoContainer}
           >

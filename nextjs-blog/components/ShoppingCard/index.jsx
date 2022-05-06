@@ -40,23 +40,25 @@ export default function ShoppingCard({
               <span className={styles.buttonWrap}>
                 <button
                   id="update"
-                  className={styles.button}
+                  className={styles.plus}
                   onClick={() => {
                     items.map((i) => {
                       i.id === id && (i.quantity += 1) && (quantity += 1);
+                      document.getElementById("quantity").innerHTML = quantity;
                     });
                   }}
                 >
                   <p className={styles.p}>+</p>
                 </button>
                 <button
-                  className={styles.button}
+                  className={styles.minus}
                   onClick={() => {
                     items.map((i) => {
                       i.id === id &&
                         i.quantity !== 0 &&
                         (i.quantity -= 1) &&
                         (quantity -= 1);
+                      document.getElementById("quantity").innerHTML = quantity;
                     });
                   }}
                 >

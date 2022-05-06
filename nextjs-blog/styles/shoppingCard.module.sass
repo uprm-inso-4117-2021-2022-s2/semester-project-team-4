@@ -7,15 +7,21 @@
     background-color: #F1F1F1
     border-radius: 12px
     margin: 10px
-    .button 
-        background-color: #dedbdb
+    .plus 
+        background-color: #a0f4afd5
+        border-radius: 6px
+    .minus 
+        background-color: #f8abab
         border-radius: 6px
     &:hover
         background-color: #FCE1CA
         .info
             background-color: #FCE1CA
-        .button
-            background-color: #f3c7a3d5
+        .plus 
+            background-color: #a0f4afd5
+            border-radius: 6px
+        .minus 
+            background-color: #f8abab
             border-radius: 6px
 
 .photo
@@ -75,7 +81,7 @@
     font-family: sans-serif
 
 
-.button
+.plus
     display: flex 
     justify-content: center 
     align-items: center
@@ -83,10 +89,23 @@
     width: 40px
     height: 30px
     &:hover 
-        background-color: #f5b27bd5 !important
+        background-color: #64ee79d5 !important
         border-radius: 6px
     &:active
-        background-color: #fb9038d5 !important
+        background-color: #42a751d5 !important
+
+.minus
+    display: flex 
+    justify-content: center 
+    align-items: center
+    border: none
+    width: 40px
+    height: 30px
+    &:hover 
+        background-color: #f17d7d !important
+        border-radius: 6px
+    &:active
+        background-color: #e36464 !important
 
 .p 
     font-size: 20px
