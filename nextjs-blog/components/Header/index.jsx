@@ -16,7 +16,7 @@ export default function Header({ onFocus }) {
         <Search />
         <span>
           <span className={styles.number} id="cartAmount">
-            {quantity()}
+            {quantity(items)}
           </span>
           <span
             className={onFocus === "bag" ? styles.active : styles.logoContainer}
@@ -37,9 +37,9 @@ export default function Header({ onFocus }) {
   );
 }
 
-export function quantity() {
+export function quantity(array) {
   const quantity = 0;
-  items.map((i) => {
+  array.map((i) => {
     quantity += i.quantity;
   });
   return quantity;

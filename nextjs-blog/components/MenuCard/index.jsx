@@ -35,7 +35,7 @@ export default function MenuCard({
           <p className={styles.cal}>calories</p>
         </span>
         <span className={styles.wrap}>
-          <h4 className={styles.price}>${price}</h4>
+          <h4 className={styles.price}>${price.toFixed(2)}</h4>
           {isAdded || add ? (
             <span className={styles.check}>
               <Image src={check} />

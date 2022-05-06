@@ -16,27 +16,27 @@ export default function Ticket() {
                   {i.quantity}x
                 </p>
               )}
-              <p className={styles.price}>${i.price}</p>
+              <p className={styles.price}>${i.price.toFixed(2)}</p>
             </span>
           ))}
       </div>
       <span className={styles.wrapTotal}>
         <span className={styles.row}>
           <h3 className={styles.name}>Items</h3>
-          <p className={styles.price}>{quantity()}</p>
+          <p className={styles.price}>{quantity(items)}</p>
         </span>
         <span className={styles.row}>
           <h3 className={styles.name}>Subtotal</h3>
-          <p className={styles.price}>${suma()}</p>
+          <p className={styles.price}>${suma(items)}</p>
         </span>
         <span className={styles.row}>
           <h3 className={styles.name}>x Tax (7%)</h3>
-          <p className={styles.price}>${tax()}</p>
+          <p className={styles.price}>${tax(items)}</p>
         </span>
         <span className={styles.divider} />
         <span className={styles.row}>
           <h3 className={styles.total}>Total</h3>
-          <p className={styles.total}>${total()}</p>
+          <p className={styles.total}>${total(items)}</p>
         </span>
       </span>
       <button className={styles.button}>
@@ -46,20 +46,20 @@ export default function Ticket() {
   );
 }
 
-function suma() {
-  let suma = 0;
+function suma(array) {
+  let suma = 0.0;
   {
-    items.map((i) => {
-      suma += parseFloat(i.price);
+    array.map((i) => {
+      suma += i.price;
     });
   }
   return suma.toFixed(2);
 }
 
-function total() {
-  return (suma() * 1.07).toFixed(2);
+function total(array) {
+  return (suma(array) * 1.07).toFixed(2);
 }
 
-function tax() {
-  return (suma() * 0.07).toFixed(2);
+function tax(array) {
+  return (suma(array) * 0.07).toFixed(2);
 }

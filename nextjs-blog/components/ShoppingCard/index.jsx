@@ -36,7 +36,7 @@ export default function ShoppingCard({
               <p className={styles.cal}>calories</p>
             </span>
             <span className={styles.wrap}>
-              <h4 className={styles.price}>${price}</h4>
+              <h4 className={styles.price}>${price.toFixed(2)}</h4>
               <span className={styles.buttonWrap}>
                 <button
                   id="update"
